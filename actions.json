@@ -1,10 +1,10 @@
 {
-  "batch_id": "2026-11-03-zt-v2",
-  "generated_at": "2026-11-03T00:26:01+08:00",
+  "batch_id": "2026-11-03-zt-v3",
+  "generated_at": "2026-11-03T00:32:42+08:00",
   "title": "今晚自投 ZT 调整确认（含新开测仓）",
-  "note": "今晚既收垃圾/保护厚仓，也按「测薄放厚」补新开：多开小预算 ABO 测仓（约 $80–$150/d，每组少挂甚至 1 条 AD）测便宜买人，赢家才加厚。仅 self_serve 且账号 ZT1/ZT2/ST-ZT1/ST-ZT2；已停组除非明确重开否则不列；不动代理。EN-Mera-23 改挂新开测仓，US-3 只收预算。",
+  "note": "今晚既收垃圾/保护厚仓，也按「测薄放厚」补新开：多开小预算 ABO 测仓（约 $80–$150/d，每组少挂甚至 1 条 AD）测便宜买人，赢家才加厚。仅 self_serve 且账号 ZT2/ST-ZT1/ST-ZT2；已停组除非明确重开否则不列；不动代理。美国 US-3 只收不挂；27 之后无现成美语候补。",
   "filter_rules": [
-    "self_serve=true and account in ZT1/ZT2/ST-ZT1/ST-ZT2",
+    "self_serve=true and account in ZT2/ST-ZT1/ST-ZT2",
     "drop already-paused/empty/keep-off unless action is reopen",
     "include new thin ABO test campaigns (测薄放厚)"
   ],
@@ -29,8 +29,8 @@
       "account": "ZT2",
       "adset": "FlirtyTalk-All-24-55-1029-US-3",
       "action": "收预算",
-      "detail": "$80 → $40；不新挂素材（EN-Mera-23 改挂新开测仓，见 mera-n01）",
-      "why": "看数：今日 ≈$78 / 1人 / CPA$78 / D0 26%；7天 $444 / 9人 / CPA$49 / D0 30%（红）\n结论：死人边缘测仓——7天 D0 红，今日仍红，别再当素材试验场\n动作：预算腰斩到 $40；样本素材 EN-Mera-23 改挂独立新开测仓，避免和本组一起早停误伤",
+      "detail": "$80 → $40",
+      "why": "看数：今日 ≈$78 / 1人 / CPA$78 / D0 26%；7天 $444 / 9人 / CPA$49 / D0 30%（红）；现挂 Mera-29 已红\n结论：死人边缘测仓——7天+今日都红；27 之后无更优美语候补可挂（29 已红、31 在 US-2 已验败、无更新美语片），故只收不挂\n动作：预算腰斩到 $40；11/03 仍 D0<35% 且 CPA>$50 则关",
       "status": "pending"
     },
     {
@@ -43,18 +43,6 @@
       "action": "挂素材",
       "detail": "预算不动 $220；补挂 KO-FlirtyTalk-Mera-34（现仅 Mera-35）",
       "why": "看数：今日 ≈$223 / 5人 / CPA$45 / D0 54%；7天 $872 / 25人 / CPA$35 / D0 57%（绿）\n结论：厚仓——韩国唯一能放量组，预算先稳住\n动作：预算不动；现仅挂 Mera-35，补 1 条历史稳的 KO-Mera-34（勿再堆多条）",
-      "status": "pending"
-    },
-    {
-      "id": "mera-10",
-      "product": "Mera",
-      "self_serve": true,
-      "priority": "今晚必做",
-      "account": "ZT1",
-      "adset": "All-30-55-1030-US-1 / US-2",
-      "action": "关",
-      "detail": "两个 adset 都关（objects 仍 ACTIVE）",
-      "why": "看数：今日整户 $0；7天约 $68/0 人与 $76/1 人，近3天合计约 $29\n结论：死人——投不出去，美国应统一在 ZT2\n动作：两个 US adset 都关；美国起量走 ZT2 厚仓+新开测仓",
       "status": "pending"
     },
     {
@@ -78,7 +66,7 @@
       "adset": "1029-US-3",
       "action": "若已收至$40",
       "detail": "11/03 日末仍 D0<35% 且 CPA>$50 则关",
-      "why": "看数：承接 mera-07 收预算后的日末复核（今日已红：1人/D0 26%）\n结论：测仓 ultimatum——再红一天就别留\n动作：确认已收到 $40；11/03 仍红则关（勿重开已死老组）",
+      "why": "看数：承接 mera-07 收预算后的日末复核（今日已红：1人/D0 26%）\n结论：测仓 ultimatum——再红一天就别留；不另挂美语候补\n动作：确认已收到 $40；11/03 仍红则关（勿重开已死老组）",
       "status": "pending"
     },
     {
@@ -115,30 +103,6 @@
       "action": "维持偏收",
       "detail": "ABO $90维持或→$70；不加素材冲击",
       "why": "看数：今日 ≈$100 / 2人 / CPA$50 / D0≈27%；7天 $378 / 6人 / CPA$63 / D0≈41%（偏黄）\n结论：黄仓——贴线但深度不够，不是今晚加厚对象\n动作：维持或微收到 $70；新素材去独立测仓，勿冲击本组",
-      "status": "pending"
-    },
-    {
-      "id": "mera-n01",
-      "product": "Mera",
-      "self_serve": true,
-      "priority": "今晚必做",
-      "account": "ZT2",
-      "adset": "新开 ABO · camp zt2_A-PUR-US-All-1103 / adset FlirtyTalk-All-24-55-1103-US-T1",
-      "action": "新开测仓",
-      "detail": "日预算 $100；国家 US；优化 AEO 购（先不 VO）；先挂 1 条 EN-FlirtyTalk-Mera-23；年龄 24-55",
-      "why": "看数：EN-Mera-23 历史在已关 1012-US 曾 $229/9人/CPA$25.5/D0 70%，近窗衰减；US-3 今日红不宜再当试验场\n结论：测仓——要独立早停空间，不能冲散 US-1（Mera-27）学习，也不能绑死在 US-3 红组上\n动作：专开薄测 ABO（约 $80–$150，取 $100）只挂 23；跑出 ≥5 付费且 D0≥50% 再考虑加厚或分预算，绝不直接加进 US-1",
-      "status": "pending"
-    },
-    {
-      "id": "mera-n02",
-      "product": "Mera",
-      "self_serve": true,
-      "priority": "今晚必做",
-      "account": "ZT1",
-      "adset": "新开 ABO · camp zt1_A-PUR-KR-KO-1103 / adset FlirtyTalk-All-24-55-1103-KR-T1",
-      "action": "新开测仓",
-      "detail": "日预算 $100；国家 KR；优化 AEO 购（先不 VO）；先挂 1 条 KO-FlirtyTalk-Mera-34；勿重开已死 1003/0928/1011 老组",
-      "why": "看数：ZT1 韩国自 10/29 全停；KO-Mera-34 在 ZT1 1008-KR 历史约 $1,597/42人/D0 61%，近7天仍约 54%；ZT2 KR-1 已是厚仓在挂 35+补 34\n结论：重启测仓——想启用老赢家素材，但别重开已死老组；ZT1 空仓适合独立薄测\n动作：新开 1 个 ABO 测仓 $100 只挂 34；到 ≥5 付费且 D0≥50% 再加厚。账户若仍 status=2 受限则先确认账户再开",
       "status": "pending"
     },
     {

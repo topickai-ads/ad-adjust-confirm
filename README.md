@@ -3,10 +3,10 @@
 公网确认页：勾选今晚要改的 **自投 ZT** adset / campaign（含「新开测仓」），点确认后 **POST webhook** 叫醒 UG 例程「投放调整确认 webhook」。
 
 - Pages：`https://topickai-ads.github.io/ad-adjust-confirm/`
-- 批次：`2026-11-03-zt-v2`
-- 条数：**15**（保留原 9 条自投调整 + 新增 6 条新开测仓；仅 ZT1 / ZT2 / ST-ZT1 / ST-ZT2）
+- 批次：`2026-11-03-zt-v3`
+- 条数：**12**（仅 ZT2 / ST-ZT1 / ST-ZT2）
 - 口令门：`hebin`（localStorage 约 7 天）
-- 策略一句话：今晚既收垃圾/保护厚仓，也按「测薄放厚」补新开（小预算 ABO ≈$80–$150/d，每组少挂甚至 1 条 AD）
+- 策略一句话：今晚既收垃圾/保护厚仓，也按「测薄放厚」补新开（小预算 ABO ≈$80–$150/d，每组少挂甚至 1 条 AD）；美国 US-3 只收不挂；27 之后无现成美语候补
 
 ## Billy 怎么用
 
@@ -31,10 +31,11 @@ https://topickai-ads.github.io/ad-adjust-confirm/?hook=<WEBHOOK_URL>&hk=<SENDER_
 
 ## 过滤 / 内容规则（Billy 2026-11-03）
 
-1. 只要自己的 ZT 自投：`self_serve=true` 且账号 ∈ {ZT1, ZT2, ST-ZT1, ST-ZT2}；代理全部不列。
+1. 只要自己的 ZT 自投：`self_serve=true` 且账号 ∈ {ZT2, ST-ZT1, ST-ZT2}；代理全部不列。
 2. 已停掉的不要显示怎么改：已 PAUSED/空仓且非「重新开启」→ 不进清单。
 3. 理由白话三段式：看了什么数 → 结论（厚仓/测仓/死人）→ 所以做这个动作。
 4. 清单须含**新开**（新 ABO campaign + 薄测仓 adset），不能全是加减预算/关；测薄放厚；ST-ZT2 整户新开标「可选/不催」。
+5. 美国 US-3 只收不挂；27 之后无现成美语候补。
 
 ## 文件
 
@@ -56,4 +57,4 @@ python3 -m http.server 8765
 ## 数据字段
 
 每行：`id, product(Mera|Star), self_serve, priority, account, adset, action, detail, why, status`。
-自投判定：账户 `ZT1`/`ZT2`/`ST-ZT1`/`ST-ZT2`。
+自投判定：账户 `ZT2`/`ST-ZT1`/`ST-ZT2`。
