@@ -86,7 +86,7 @@ tr.disabled{opacity:.55}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.2 4.2L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <h1>投放调整确认</h1>
+        <h1>今晚自投 ZT 调整确认</h1>
         <p style="margin:0;color:var(--muted);font-size:12px">请输入访问口令</p>
       </div>
     </div>
@@ -114,10 +114,10 @@ tr.disabled{opacity:.55}
       </div>
       <div class="controls">
         <div class="seg" id="productSeg" role="group" aria-label="产品">
-          <button type="button" data-v="all" class="on">全部产品</button>
+          <button type="button" data-v="self" class="on">仅自投 ZT</button>
           <button type="button" data-v="Mera">Mera</button>
           <button type="button" data-v="Star">Star</button>
-          <button type="button" data-v="self">仅自投</button>
+          <button type="button" data-v="all">全部</button>
         </div>
         <div class="seg" id="prioSeg" role="group" aria-label="优先级">
           <button type="button" data-v="must" class="on">今晚必做</button>
@@ -164,75 +164,20 @@ tr.disabled{opacity:.55}
       （写入 localStorage 后自动从地址栏清掉；密钥永不进仓库/HTML）。
     </div>
   </main>
-  <footer class="foot">batch 数据内嵌于页面 · 确认后 UG 例程会在聊天回报调整前/后 · 本页不改 Meta</footer>
+  <footer class="foot">本批仅自投 ZT · batch 内嵌 · 确认后 UG 例程回报 · 本页不改 Meta</footer>
 </div>
 
 <script>
 window.ACTIONS_SNAPSHOT = {
-  "batch_id": "2026-11-02-tonight",
-  "generated_at": "2026-11-02T23:49:00+08:00",
-  "title": "今晚投放调整确认",
+  "batch_id": "2026-11-02-tonight-zt",
+  "generated_at": "2026-11-03T00:06:59+08:00",
+  "title": "今晚自投 ZT 调整确认",
+  "note": "按 Billy 规则过滤：仅 self_serve=true 且账号 ZT1/ZT2/ST-ZT1/ST-ZT2；已 PAUSED/空仓且建议非「重新开启」的已剔除（含 ST-ZT2 不动/空仓）。原 batch 2026-11-02-tonight 共 30 条 → 本批 9 条。",
+  "filter_rules": [
+    "self_serve=true and account in ZT1/ZT2/ST-ZT1/ST-ZT2",
+    "drop already-paused/empty/keep-off unless action is reopen"
+  ],
   "actions": [
-    {
-      "id": "mera-01",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "DT16",
-      "adset": "AI-M-30-55-1028-US (YZ1)",
-      "action": "关",
-      "detail": "关 adset 或所在 CBO campaign ocean_A-Purchase-US-1028-YZ1",
-      "why": "下午已判关；今日 $53/0 人",
-      "status": "pending"
-    },
-    {
-      "id": "mera-02",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "DT16",
-      "adset": "AI-M-30-55-1027 -2",
-      "action": "关",
-      "detail": "关 adset（现 $80/d）",
-      "why": "下午已判关；今日 $62/1 CPA$62 D0 11%",
-      "status": "pending"
-    },
-    {
-      "id": "mera-03",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "DT16",
-      "adset": "AI-M-30-55-1028-US-4",
-      "action": "关",
-      "detail": "关 adset（现 $50/d）",
-      "why": "下午已判关；今日 $63/0 人",
-      "status": "pending"
-    },
-    {
-      "id": "mera-04",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "DT16",
-      "adset": "AI-M-30-55-1030 @1030-YZ2",
-      "action": "关",
-      "detail": "关 CBO campaign ocean_A-Purchase-US-1030-YZ2 ($50)",
-      "why": "下午已判关；今日 $52/0 人",
-      "status": "pending"
-    },
-    {
-      "id": "mera-05",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "DT16",
-      "adset": "AI-M-30-55-1028-US-2 / 1030-YZ",
-      "action": "关",
-      "detail": "顺手关掉残量",
-      "why": "今日几乎无量",
-      "status": "pending"
-    },
     {
       "id": "mera-06",
       "product": "Mera",
@@ -270,18 +215,6 @@ window.ACTIONS_SNAPSHOT = {
       "status": "pending"
     },
     {
-      "id": "mera-09",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "DT16",
-      "adset": "AI-M-30-55-1028-US-3",
-      "action": "加 CBO",
-      "detail": "ocean_A-Purchase-US-1028-YZ3 $150 → $180",
-      "why": "今日 D0 120% CPA$28；7天 D0 73%",
-      "status": "pending"
-    },
-    {
       "id": "mera-10",
       "product": "Mera",
       "self_serve": true,
@@ -294,42 +227,6 @@ window.ACTIONS_SNAPSHOT = {
       "status": "pending"
     },
     {
-      "id": "mera-11",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "DT17",
-      "adset": "AIkiss-M-30-55",
-      "action": "加预算",
-      "detail": "$100 → $120",
-      "why": "今日 5 人 D0 151%；7天 D0 75%",
-      "status": "pending"
-    },
-    {
-      "id": "mera-12",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "DT17",
-      "adset": "AIkiss-M-30-55 -2",
-      "action": "关或腰斩",
-      "detail": "先停或 $120→$60",
-      "why": "今日 $67/0 人",
-      "status": "pending"
-    },
-    {
-      "id": "mera-13",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "DT17",
-      "adset": "AIsubway-1027-KR 与 1029-KR",
-      "action": "关/停",
-      "detail": "停掉无付费组",
-      "why": "今日 0 付费",
-      "status": "pending"
-    },
-    {
       "id": "mera-14",
       "product": "Mera",
       "self_serve": true,
@@ -339,30 +236,6 @@ window.ACTIONS_SNAPSHOT = {
       "action": "观察",
       "detail": "预算不加；看到 11/04",
       "why": "CPA 尚可但 ARPPU 薄",
-      "status": "pending"
-    },
-    {
-      "id": "mera-15",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "可明早再看",
-      "account": "DT16",
-      "adset": "AI-M-30-55-1027",
-      "action": "维持",
-      "detail": "$80 不动",
-      "why": "7天仍绿；近3天变软",
-      "status": "pending"
-    },
-    {
-      "id": "mera-16",
-      "product": "Mera",
-      "self_serve": false,
-      "priority": "可明早再看",
-      "account": "DT17",
-      "adset": "AIkiss-M-30-55 -4",
-      "action": "可先-30%",
-      "detail": "$100→$70 后观察",
-      "why": "今日偏红",
       "status": "pending"
     },
     {
@@ -412,126 +285,6 @@ window.ACTIONS_SNAPSHOT = {
       "detail": "ABO $90维持或→$70；不加素材冲击",
       "why": "今日2人 CPA$50贴线但D0≈27%；7天D0≈41%偏黄",
       "status": "pending"
-    },
-    {
-      "id": "star-04",
-      "product": "Star",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "ST01",
-      "adset": "AI-M-30-55-1027-US",
-      "action": "关/停",
-      "detail": "关 adset 或所在 CBO（现约$50）",
-      "why": "7天$407/1人 D0≈3%；今日残量$10",
-      "status": "pending"
-    },
-    {
-      "id": "star-05",
-      "product": "Star",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "ST01",
-      "adset": "AI-M-30-55-1026-US-1",
-      "action": "收",
-      "detail": "ABO $50→$30；顺手停 WITH_ISSUES 的1019-Starriva-(7)/(10)",
-      "why": "今日1人 D0≈12%；组内已有WITH_ISSUES",
-      "status": "pending"
-    },
-    {
-      "id": "star-06",
-      "product": "Star",
-      "self_serve": false,
-      "priority": "可明早再看",
-      "account": "ST01",
-      "adset": "AI-M-30-55-1019-US-YZ",
-      "action": "维持",
-      "detail": "CBO $100不动；继续只挂 Starriva-1015-英语-10",
-      "why": "今日3人 CPA$22 D0≈85%惊喜，但<5人先不加",
-      "status": "pending"
-    },
-    {
-      "id": "star-07",
-      "product": "Star",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "ST02",
-      "adset": "AI-M-30-55-1029",
-      "action": "收+清拒审",
-      "detail": "CBO ocean_A-Purchase-US-1029-starriva -2 现$70→$40；立刻停 DISAPPROVED:1029-Starriva-8/7/1 及 WITH_ISSUES 冗余",
-      "why": "今日1人 D0≈10%；组内大量拒审/有问题素材仍挂着",
-      "status": "pending"
-    },
-    {
-      "id": "star-08",
-      "product": "Star",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "ST02",
-      "adset": "AI1-M-25-60-1029-US",
-      "action": "关或腰斩",
-      "detail": "所在CBO收到$0或腰斩；停 1-us-star",
-      "why": "今日1人 ARPPU≈$4，7天几乎无深度",
-      "status": "pending"
-    },
-    {
-      "id": "star-09",
-      "product": "Star",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "ST02",
-      "adset": "AI-M-30-55-1023 等已PAUSED",
-      "action": "确认关死",
-      "detail": "确认 campaign 仍 PAUSED，避免残量（今日仍花约$35）",
-      "why": "objects 已 CAMPAIGN_PAUSED 但仍有花费",
-      "status": "pending"
-    },
-    {
-      "id": "star-10",
-      "product": "Star",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "ST04",
-      "adset": "AIkiss-M-25-55-1029-1-YZ",
-      "action": "关",
-      "detail": "关 CBO ocean_A-Purchase-US-1029-starriva-US3-YZ ($50)",
-      "why": "今日$36/0人；7天0付费；AIkiss命名本身高风险",
-      "status": "pending"
-    },
-    {
-      "id": "star-11",
-      "product": "Star",
-      "self_serve": false,
-      "priority": "今晚必做",
-      "account": "ST04",
-      "adset": "AI-M-25-55-1029-2-YZ",
-      "action": "确认关死",
-      "detail": "campaign 已 PAUSED，确认无残量",
-      "why": "今日仍花$48/0人",
-      "status": "pending"
-    },
-    {
-      "id": "star-12",
-      "product": "Star",
-      "self_serve": false,
-      "priority": "可明早再看",
-      "account": "ST04",
-      "adset": "AI-M-25-55-1102-US-2",
-      "action": "维持微测",
-      "detail": "CBO$50可留；几乎无花费",
-      "why": "新仓，勿加码",
-      "status": "pending"
-    },
-    {
-      "id": "star-13",
-      "product": "Star",
-      "self_serve": true,
-      "priority": "备注",
-      "account": "ST-ZT2",
-      "adset": "—",
-      "action": "不动",
-      "detail": "账户空仓（campaigns=0）；不催开通美国",
-      "why": "Billy 自投节奏，勿催「把Star美国投起来」",
-      "status": "pending"
     }
   ]
 };
@@ -542,7 +295,7 @@ window.ACTIONS_SNAPSHOT = {
 const PASS='hebin';
 const AK='ad_adjust_ak', TTL=7*24*3600*1000;
 const HOOK_KEY='ad_adjust_hook', HK_KEY='ad_adjust_hk';
-const state={product:'all', prio:'must', selected:new Set()};
+const state={product:'self', prio:'must', selected:new Set()};
 
 function saveAk(pw){localStorage.setItem(AK, JSON.stringify({v:pw, exp:Date.now()+TTL}));}
 function loadAk(){
